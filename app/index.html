@@ -28,8 +28,8 @@
     <div class="container">
       <header>
         <h1>Recipe App</h1>
-        <button>Sign Up</button>
-        <button>Log In</button>
+        <button id="signupbtn" ng-click=$routeParams('/signup')>Sign Up</button>
+        <button id="loginbtn" ng-click="$location.path('/scripts/users/user_login.js')">Log In</button>
       </header>
   <br />
       <div class="menuitems">
@@ -43,7 +43,7 @@
       </div>
 
 
-      <section>
+      <section ng-view>
 
       </section>
 
@@ -82,6 +82,11 @@
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+        <script src="scripts/users/user_login.js"></script>
+        <script src="scripts/users/user_signup.js"></script>
+
+
+
+    <!-- endbuild -->
 </body>
 </html>

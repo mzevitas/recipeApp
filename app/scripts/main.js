@@ -9,17 +9,17 @@
       }
     })
     .config( function ($routeProvider) {
-    //
-    //  $routeProvider.when('/', {
-    //    templateUrl: 'scripts/whiskey/home.html',
-    //    controller: 'WhiskeyController'
-    //  });
-    //
-    //  $routeProvider.when('/add', {
-    //    templateUrl: 'scripts/whiskey/add.html',
-    //    controller: 'WhiskeyController'
-    //  })
-    //
+
+      $routeProvider.when('/login', {
+        templateUrl: 'scripts/users/user-login.html',
+        controller: 'UserLoginController'
+      });
+
+      $routeProvider.when('/signup', {
+        templateUrl: 'scripts/users/user-signup.html',
+        controller: 'UserSignupController'
+      })
+
     });
 
 }());
