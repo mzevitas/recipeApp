@@ -1,12 +1,19 @@
-(function (){
+(function () {
 
   angular.module('Recipe')
-    .controller('UserSignupController', ['$scope', '$http', '$location', 'PARSE_HEADERS',
-      function ($scope, $http, $location, PARSE_HEADERS) {
+    .controller('UserSignUpController', ['$scope', 'UserFactory',
+      function ($scope, UserFactory) {
+
+        UserFactory.postSignUp('username, email, password').success( function (data) {
+          $scope.user = data.results;
+        });
+
+        $scope.postSignUp('username, email, password') = function (user) {
+          UserFactory.postSignUp(user);
+        };
 
 
 
       }]);
-
 
 }());
