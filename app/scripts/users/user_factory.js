@@ -16,15 +16,15 @@
         };
 
 
-        //var getLogin = function (user) {
-        //  $http.post(urlli, user, PARSE_HEADERS)
-        //    .success( function () {
-        //      $location.path('/');
-        //    }
-        //  );
-        //};
-        //
-        //
+        var getLogin = function (user) {
+          $http.post(urlli, user, PARSE_HEADERS)
+            .success( function () {
+              $location.path('/');
+            }
+          );
+        };
+
+
 
 
         var postSignUp = function (user) {
@@ -38,8 +38,10 @@
 
 
         return {
-          //getLogin: getLogin,
-          postSignUp: postSignUp
+          getLogin: getLogin,
+          postSignUp: postSignUp,
+          signUp: signUp,
+          logIn: logIn
         }
 
       }

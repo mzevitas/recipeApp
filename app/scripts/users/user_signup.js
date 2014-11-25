@@ -4,7 +4,7 @@
     .controller('UserSignUpController', ['$scope', 'UserFactory',
       function ($scope, UserFactory) {
 
-        UserFactory.postSignUp('username, email, password').success( function (data) {
+        UserFactory.signUp('username, email, password').success( function (data) {
           $scope.user = data.results;
         });
 
