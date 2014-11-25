@@ -30,17 +30,20 @@
      font-size: 50px;
      margin-top: 11px;
    }
+  a {
 
-   button{
-     float: right;
-     margin-top: 40px;
-     margin-right: 2%;
-     width: 13%;
-     height: 40px;
-     font-size: 20px;
-     font-weight: 700;
-     background-color: white;
-   }
+    color: black;
+    button {
+      float: right;
+      margin-top: 40px;
+      margin-right: 2%;
+      width: 13%;
+      height: 40px;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: white;
+    }
+  }
  }
 
  .menuitems {
