@@ -18,7 +18,7 @@
       $routeProvider.when('/signup', {
         templateUrl: 'scripts/users/user-signup.html',
         controller: 'UserSignUpController'
-      })
+      });
 
     });
 

@@ -9,24 +9,57 @@
 
     <link rel="stylesheet" href="styles/vendor.css">
 
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="styles/main.css">
 
     <script src="scripts/vendor/modernizr.js"></script>
   </head>
-  <body>
+  <body ng-app="Recipe">
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-        <li>Sass</li>
-        <li>Modernizr</li>
-        <li>Bourbon & Neat</li>
-        <li>UnderscoreJS</li>
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+    <div class="container">
+      <header>
+        <h1>Recipe App</h1>
+        <a href="#/signup"><button class="signupbtn">Sign Up</button></a>
+        <a href="#/login"><button class="loginbtn">Log In</button></a>
+      </header>
+  <br />
+      <div class="menuitems">
+        <a href="#">Breakfast</a>
+        <a href="#">Lunch</a>
+        <a href="#">Dinner</a>
+        <a href="#">Dessert</a>
+        <a href="#">Appitizers</a>
+        <a href="#">Drinks</a>
+
+      </div>
+
+
+      <section ng-view="">
+
+      </section>
+
+
+
+
+      <aside>
+      <p>Profile</p>
+        <p>Profile</p>
+        <p>Profile</p>
+
+      </aside>
+
+
+      <footer>
+
+        <a href="#">Breakfast</a>
+        <a href="#">Lunch</a>
+        <a href="#">Dinner</a>
+        <a href="#">Dessert</a>
+        <a href="#">Appitizers</a>
+        <a href="#">Drinks</a>
+      </footer>
+
     </div>
 
     <script src="scripts/vendor.js"></script>

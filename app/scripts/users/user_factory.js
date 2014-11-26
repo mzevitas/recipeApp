@@ -16,8 +16,8 @@
         };
 
 
-        var getLogin = function (user) {
-          $http.post(urlli, user, PARSE_HEADERS)
+        var getLogin = function (logIn) {
+          $http.post(urlli, logIn, PARSE_HEADERS)
             .success( function () {
               $location.path('/');
             }
@@ -27,8 +27,8 @@
 
 
 
-        var postSignUp = function (user) {
-          $http.post(urlsu, user, PARSE_HEADERS)
+        var postSignUp = function (signUp) {
+          $http.post(urlsu, signUp, PARSE_HEADERS)
             .success( function () {
               $location.path('/');
             }

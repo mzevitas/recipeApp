@@ -8,8 +8,8 @@
           $scope.user = data.results;
         });
 
-        $scope.postSignUp('username, email, password') = function (user) {
-          UserFactory.postSignUp(user);
+        $scope.postSignUp = function (signUp) {
+          UserFactory.postSignUp(signUp);
         };
 
 
