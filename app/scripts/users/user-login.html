@@ -1,5 +1,8 @@
-<form ng-submit="userLogin()">
-  <input type="email" ng-model="recipe.email" placeholder="Enter Email"/><br />
-  <input type="password" ng-model="recipe.password" placeholder="Enter Password"/><br />
-  <button>Log In</button>
+<a href="" ng-click="checkUser()">Check User</a>
+
+<form ng-submit="login(user)">
+  <h2>Add User</h2><br />
+  <input type="text" ng-model="user.username" /><br />
+  <input type="text" ng-model="user.password"/><br />
+  <button>Login</button>
 </form>

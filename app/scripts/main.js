@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('Recipe', ['ngRoute'])
+  angular.module('Recipe', ['ngRoute', 'ngCookies'])
     .constant('PARSE_HEADERS', {
       headers: {
         'X-Parse-Application-Id': 'FYN9rd7vsrQZXkBs1wV24CsZjHqoK8UnYSAtjAFt',
@@ -12,12 +12,12 @@
 
       $routeProvider.when('/login', {
         templateUrl: 'scripts/users/user-login.html',
-        controller: 'UserLoginController'
+        controller: 'User'
       });
 
       $routeProvider.when('/signup', {
         templateUrl: 'scripts/users/user-signup.html',
-        controller: 'UserSignUpController'
+        controller: 'User'
       });
 
     });

@@ -1,47 +1,47 @@
 (function () {
 
   angular.module('Recipe')
-    .factory('UserFactory', ['$http', '$location', 'PARSE_HEADERS',
-      function ($http, $location, PARSE_HEADERS) {
+    .factory('UserFactory', ['$http', '$location', '$cookieStore', 'PARSE_HEADERS',
+      function ($http, $location, $cookieStore, PARSE_HEADERS) {
 
-        var urlsu = 'https://api.parse.com/1/users';
-        var urlli = 'https://api.parse.com/1/login'
 
-          var signUp = function () {
-          return $http.get(urlsu, PARSE_HEADERS);
+        var register = function (user) {
+          $http.post('https://api.parse.com/1/users', user, PARSE_HEADERS).success( function (data) {
+
+          });
         };
 
-        var logIn = function () {
-          return $http.get(urlli, PARSE_HEADERS)
+        var login = function (user) {
+          var params = 'email='+user.email+'&password='+user.password;
+          $http.get('https://api.parse.com/1/login/?'+params, PARSE_HEADERS)
+            .success( function (data) {
+              $cookieStore.put('currentUser', data);
+              return myUser();
+            });
         };
 
-
-        var getLogin = function (logIn) {
-          $http.post(urlli, logIn, PARSE_HEADERS)
-            .success( function () {
-              $location.path('/');
-            }
-          );
+        var logout = function () {
+          $cookieStore.remove('currentUser');
+          return myUser();
         };
 
-
-
-
-        var postSignUp = function (signUp) {
-          $http.post(urlsu, signUp, PARSE_HEADERS)
-            .success( function () {
-              $location.path('/');
-            }
-          );
+        var checkUser = function (user) {
+          var user = $cookieStore.get('currentUser');
+          console.log(user);
+          if(user !== undefined) {
+            $('#user').html('Welcome back ' + user.email);
+            $location.path('/list');
+          } else {
+            $('#user').html('Please Log In');
+            $location.path('/');
+          }
         };
-
-
 
         return {
-          getLogin: getLogin,
-          postSignUp: postSignUp,
-          signUp: signUp,
-          logIn: logIn
+          login:    login,
+          logout:   logout,
+          register: register,
+          checkUser: checkUser
         }
 
       }
