@@ -12,7 +12,7 @@
         };
 
         var login = function (user) {
-          var params = 'email='+user.email+'&password='+user.password;
+          var params = 'email='+user.username+'&password='+user.password;
           $http.get('https://api.parse.com/1/login/?'+params, PARSE_HEADERS)
             .success( function (data) {
               $cookieStore.put('currentUser', data);
@@ -29,8 +29,8 @@
           var user = $cookieStore.get('currentUser');
           console.log(user);
           if(user !== undefined) {
-            $('#user').html('Welcome back ' + user.email);
-            $location.path('/list');
+            $('#user').html('Welcome back ' + user.username);
+            $location.path('/');
           } else {
             $('#user').html('Please Log In');
             $location.path('/');
