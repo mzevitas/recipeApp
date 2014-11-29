@@ -12,13 +12,19 @@
 
       $routeProvider.when('/login', {
         templateUrl: 'scripts/users/user-login.html',
-        controller: 'Recipe'
+        controller: 'User'
       });
 
       $routeProvider.when('/signup', {
         templateUrl: 'scripts/users/user-signup.html',
-        controller: 'Recipe'
+        controller: 'User'
       });
+
+      $routeProvider.when('/addRecipe', {
+        templateUrl: 'scripts/recipe/add_recipe.html'
+      });
+
+
 
     });
 

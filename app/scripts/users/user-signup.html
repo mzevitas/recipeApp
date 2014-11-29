@@ -1,6 +1,9 @@
-<form ng-submit="userSignup()">
-  <input type="email" ng-model="user.email" placeholder="Enter Email"/><br />
+<form ng-submit="addUser(user)">
+  <input type="email" ng-model="user.username" placeholder="Enter Email"/><br />
+
   <input type="password" ng-model="user.password" placeholder="Enter Password"/><br />
+
   <input type="password" ng-model="user.password" placeholder="Confirm Password"/><br />
+
   <button>Sign Up</button>
 </form>

@@ -1,7 +1,7 @@
 (function () {
 
   angular.module('Recipe')
-    .controller('Recipe', ['UserFactory', '$scope',
+    .controller('User', ['UserFactory', '$scope',
       function (UserFactory, $scope) {
 
         $scope.addUser = function (user) {
