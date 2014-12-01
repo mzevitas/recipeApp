@@ -4,7 +4,7 @@
     .controller('UserController', ['UserFactory', '$scope',
       function (UserFactory, $scope) {
 
-        $scope.addUser = function (user) {
+        $scope.signUP = function (user) {
           UserFactory.signUp(user);
         };
 

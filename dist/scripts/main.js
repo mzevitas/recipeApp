@@ -8,19 +8,19 @@
         'Content-Type': 'application/json'
       }
     })
-    .constant('PARSE_URI', 'https://api.parse.com/1')
+    //.constant('https://api.parse.com/1/')
     .config( function ($routeProvider) {
 
 
-      $routeProvider.when('#/signUp', {
+      $routeProvider.when('/signup', {
         templateUrl: 'scripts/users/user-signup.html',
         controller: 'UserController'
-      });
+      })
 
-      $routeProvider.when('#/login', {
+      $routeProvider.when('/login', {
         templateUrl: 'scripts/users/user-login.html',
         controller: 'UserController'
-      });
+      })
 
 
 
@@ -41,7 +41,7 @@
     .controller('UserController', ['UserFactory', '$scope',
       function (UserFactory, $scope) {
 
-        $scope.addUser = function (user) {
+        $scope.signUP = function (user) {
           UserFactory.signUp(user);
         };
 
@@ -62,20 +62,21 @@
 
   angular.module('Recipe')
     .factory('UserFactory', ['$http', '$location', '$cookieStore', 'PARSE_HEADERS',
-      function ($http, $location, $cookieStore, PARSE_HEADERS) {
+      function ($http, $location,  $cookieStore, PARSE_HEADERS) {
 
 
         var signUp = function (user) {
-          $http.post(PARSE_URI + 'users', user, PARSE_HEADERS).success(function (data) {
-            $location.path('#/');
-
+          //var params = user.username + user.email + user.password;
+          $http.post('https://api.parse.com/1/users/', user, PARSE_HEADERS).success(function (data) {
+            $location.path('/');
+            console.log(data);
 
           });
         };
 
         var login = function (user) {
-          var params = 'email=' + user.email + '&password=' + user.password;
-          $http.get('https://api.parse.com/1/login/?' + params, PARSE_HEADERS)
+          var params = 'username=' + user.username + '&password=' + user.password;
+          $http.get('https://api.parse.com/1/login/' + params, PARSE_HEADERS)
             .success(function (data) {
               $cookieStore.put('currentUser', data);
               return myUser();
@@ -91,7 +92,8 @@
         return {
           login: login,
           logout: logout,
-          signUp: signUp
+          signUp: signUp,
+
 
         }
       }

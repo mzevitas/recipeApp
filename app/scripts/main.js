@@ -8,19 +8,19 @@
         'Content-Type': 'application/json'
       }
     })
-    .constant('PARSE_URI', 'https://api.parse.com/1')
+    //.constant('https://api.parse.com/1/')
     .config( function ($routeProvider) {
 
 
-      $routeProvider.when('#/signUp', {
+      $routeProvider.when('/signup', {
         templateUrl: 'scripts/users/user-signup.html',
         controller: 'UserController'
-      });
+      })
 
-      $routeProvider.when('#/login', {
+      $routeProvider.when('/login', {
         templateUrl: 'scripts/users/user-login.html',
         controller: 'UserController'
-      });
+      })
 
 
 
