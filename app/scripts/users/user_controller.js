@@ -1,11 +1,11 @@
 (function () {
 
   angular.module('Recipe')
-    .controller('User', ['UserFactory', '$scope',
+    .controller('UserController', ['UserFactory', '$scope',
       function (UserFactory, $scope) {
 
         $scope.addUser = function (user) {
-          UserFactory.register(user);
+          UserFactory.signUp(user);
         };
 
         $scope.login = function (user) {
@@ -15,9 +15,6 @@
         $scope.logout = function () {
           UserFactory.logout();
         };
-
-        // Check User on App Load
-        UserFactory.checkUser();
 
       }
     ]);

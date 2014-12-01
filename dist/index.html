@@ -20,7 +20,10 @@
     <div class="container">
       <header>
         <h1>Recipe App</h1>
-        <a href="#/signup"><button class="signupbtn">Sign Up</button></a>
+
+
+
+        <a href="#/signUp"><button class="signupbtn">Sign Up</button></a>
         <a href="#/login"><button class="loginbtn">Log In</button></a>
       </header>
   <br />
@@ -35,7 +38,13 @@
       </div>
 
 
-      <section ng-view="">
+      <section ng-view>
+
+        <span id="user"></span>
+
+
+
+
 
       </section>
 
@@ -43,9 +52,9 @@
 
 
       <aside>
-      <p>Profile</p>
-        <p>Profile</p>
-        <p>Profile</p>
+        <a href="#/">Home</a><br />
+        <a href="#/addRecipe">Add Recipe</a><br />
+        <a href="#/catagories">Find a Recipe</a>
 
       </aside>
 

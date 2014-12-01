@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('Recipe', ['ngRoute'])
+  angular.module('Recipe', ['ngRoute', 'ngCookies'])
     .constant('PARSE_HEADERS', {
       headers: {
         'X-Parse-Application-Id': 'FYN9rd7vsrQZXkBs1wV24CsZjHqoK8UnYSAtjAFt',
@@ -8,17 +8,28 @@
         'Content-Type': 'application/json'
       }
     })
+    .constant('PARSE_URI', 'https://api.parse.com/1')
     .config( function ($routeProvider) {
 
-      $routeProvider.when('/login', {
-        templateUrl: 'scripts/users/user-login.html',
-        controller: 'UserLoginController'
+
+      $routeProvider.when('#/signUp', {
+        templateUrl: 'scripts/users/user-signup.html',
+        controller: 'UserController'
       });
 
-      $routeProvider.when('/signup', {
-        templateUrl: 'scripts/users/user-signup.html',
-        controller: 'UserSignUpController'
+      $routeProvider.when('#/login', {
+        templateUrl: 'scripts/users/user-login.html',
+        controller: 'UserController'
       });
+
+
+
+      //$routeProvider.when('/addRecipe', {
+      //  templateUrl: 'scripts/recipe/add_recipe.html'
+      //  //controller: ''
+      //});
+
+
 
     });
 
@@ -27,88 +38,64 @@
 (function () {
 
   angular.module('Recipe')
-    .factory('UserFactory', ['$http', '$location', 'PARSE_HEADERS',
-      function ($http, $location, PARSE_HEADERS) {
+    .controller('UserController', ['UserFactory', '$scope',
+      function (UserFactory, $scope) {
 
-        var urlsu = 'https://api.parse.com/1/users';
-        var urlli = 'https://api.parse.com/1/login'
-
-          var signUp = function () {
-          return $http.get(urlsu, PARSE_HEADERS);
+        $scope.addUser = function (user) {
+          UserFactory.signUp(user);
         };
 
-        var logIn = function () {
-          return $http.get(urlli, PARSE_HEADERS)
+        $scope.login = function (user) {
+          UserFactory.login(user);
         };
 
-
-        var getLogin = function (logIn) {
-          $http.post(urlli, logIn, PARSE_HEADERS)
-            .success( function () {
-              $location.path('/');
-            }
-          );
+        $scope.logout = function () {
+          UserFactory.logout();
         };
-
-
-
-
-        var postSignUp = function (signUp) {
-          $http.post(urlsu, signUp, PARSE_HEADERS)
-            .success( function () {
-              $location.path('/');
-            }
-          );
-        };
-
-
-
-        return {
-          getLogin: getLogin,
-          postSignUp: postSignUp,
-          signUp: signUp,
-          logIn: logIn
-        }
 
       }
     ]);
 
 }());
 
-(function (){
-
-  angular.module('Recipe')
-    .controller('UserLoginController', ['$scope',  'PARSE_HEADERS',
-    function ($scope, $http, $location, PARSE_HEADERS) {
-
-
-      $scope.getLogin = function (logIn) {
-        UserFactory.getLogin(logIn);
-      };
-
-    }
-    ]);
-
-
-
-}());
-
 (function () {
 
   angular.module('Recipe')
-    .controller('UserSignUpController', ['$scope', 'UserFactory',
-      function ($scope, UserFactory) {
+    .factory('UserFactory', ['$http', '$location', '$cookieStore', 'PARSE_HEADERS',
+      function ($http, $location, $cookieStore, PARSE_HEADERS) {
 
-        UserFactory.signUp('username, email, password').success( function (data) {
-          $scope.user = data.results;
-        });
 
-        $scope.postSignUp = function (signUp) {
-          UserFactory.postSignUp(signUp);
+        var signUp = function (user) {
+          $http.post(PARSE_URI + 'users', user, PARSE_HEADERS).success(function (data) {
+            $location.path('#/');
+
+
+          });
+        };
+
+        var login = function (user) {
+          var params = 'email=' + user.email + '&password=' + user.password;
+          $http.get('https://api.parse.com/1/login/?' + params, PARSE_HEADERS)
+            .success(function (data) {
+              $cookieStore.put('currentUser', data);
+              return myUser();
+            });
+        };
+
+        var logout = function () {
+          $cookieStore.remove('currentUser');
+          return myUser();
         };
 
 
+        return {
+          login: login,
+          logout: logout,
+          signUp: signUp
 
-      }]);
+        }
+      }
+
+    ]);
 
 }());

@@ -8,21 +8,26 @@
         'Content-Type': 'application/json'
       }
     })
+    .constant('PARSE_URI', 'https://api.parse.com/1')
     .config( function ($routeProvider) {
 
-      $routeProvider.when('/login', {
-        templateUrl: 'scripts/users/user-login.html',
-        controller: 'User'
-      });
 
-      $routeProvider.when('/signup', {
+      $routeProvider.when('#/signUp', {
         templateUrl: 'scripts/users/user-signup.html',
-        controller: 'User'
+        controller: 'UserController'
       });
 
-      $routeProvider.when('/addRecipe', {
-        templateUrl: 'scripts/recipe/add_recipe.html'
+      $routeProvider.when('#/login', {
+        templateUrl: 'scripts/users/user-login.html',
+        controller: 'UserController'
       });
+
+
+
+      //$routeProvider.when('/addRecipe', {
+      //  templateUrl: 'scripts/recipe/add_recipe.html'
+      //  //controller: ''
+      //});
 
 
 
