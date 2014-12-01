@@ -6,7 +6,6 @@
 
 
         var signUp = function (user) {
-          //var params = user.username + user.email + user.password;
           $http.post('https://api.parse.com/1/users/', user, PARSE_HEADERS).success(function (data) {
             $location.path('/');
             console.log(data);
@@ -15,7 +14,7 @@
         };
 
         var login = function (user) {
-          var params = 'username=' + user.username + '&password=' + user.password;
+          var params = 'username=' + user.username + ' &password=' + user.password;
           $http.get('https://api.parse.com/1/login/' + params, PARSE_HEADERS)
             .success(function (data) {
               $cookieStore.put('currentUser', data);
@@ -32,7 +31,7 @@
         return {
           login: login,
           logout: logout,
-          signUp: signUp,
+          signUp: signUp
 
 
         }
