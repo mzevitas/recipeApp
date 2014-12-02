@@ -15,12 +15,12 @@
       $routeProvider.when('/signup', {
         templateUrl: 'scripts/users/user-signup.html',
         controller: 'UserController'
-      })
+      });
 
       $routeProvider.when('/login', {
         templateUrl: 'scripts/users/user-login.html',
         controller: 'UserController'
-      })
+      });
 
 
 

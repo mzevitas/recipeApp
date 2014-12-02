@@ -8,15 +8,14 @@
         var signUp = function (user) {
           $http.post('https://api.parse.com/1/users/', user, PARSE_HEADERS).success(function (data) {
             $location.path('/');
-            console.log(data);
-
           });
         };
 
         var login = function (user) {
-          var params = 'username=' + user.username + ' &password=' + user.password;
+          var params = '?username=' + user.username + '&password=' + user.password;
           $http.get('https://api.parse.com/1/login/' + params, PARSE_HEADERS)
             .success(function (data) {
+              $location.path('/');
               $cookieStore.put('currentUser', data);
               return myUser();
             });
@@ -32,7 +31,6 @@
           login: login,
           logout: logout,
           signUp: signUp
-
 
         }
       }

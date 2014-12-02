@@ -1,15 +1,14 @@
-<form ng-click="signUp(user)" ng-controller="UserController">
+<form ng-submit="signUp(user)" ng-controller="UserController">
   <input type="text" ng-model="user.username" placeholder="Enter Username"/><br/>
 
   <input type="email" ng-model="user.email" placeholder="Enter Email"/><br />
 
   <input type="password" ng-model="user.password" placeholder="Enter Password"/><br />
 
-  <input type="submit" id="submit" value="SignUp" />
+  <!--<input type="submit" id="submit" value="SignUp" />-->
+
+  <button>Sign up</button>
 
 
-
-
-
-  <!--<button>Sign Up</button>-->
 </form>
+
