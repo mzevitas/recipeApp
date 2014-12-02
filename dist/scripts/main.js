@@ -15,19 +15,19 @@
       $routeProvider.when('/signup', {
         templateUrl: 'scripts/users/user-signup.html',
         controller: 'UserController'
-      })
+      });
 
       $routeProvider.when('/login', {
         templateUrl: 'scripts/users/user-login.html',
         controller: 'UserController'
-      })
+      });
 
 
 
-      //$routeProvider.when('/addRecipe', {
-      //  templateUrl: 'scripts/recipe/add_recipe.html'
-      //  //controller: ''
-      //});
+      $routeProvider.when('/addRecipe', {
+        templateUrl: 'scripts/recipe/add_recipe.html'
+        //controller: ''
+      });
 
 
 
@@ -41,7 +41,7 @@
     .controller('UserController', ['UserFactory', '$scope',
       function (UserFactory, $scope) {
 
-        $scope.signUP = function (user) {
+        $scope.signUp = function (user) {
           UserFactory.signUp(user);
         };
 
@@ -66,18 +66,16 @@
 
 
         var signUp = function (user) {
-          //var params = user.username + user.email + user.password;
           $http.post('https://api.parse.com/1/users/', user, PARSE_HEADERS).success(function (data) {
             $location.path('/');
-            console.log(data);
-
           });
         };
 
         var login = function (user) {
-          var params = 'username=' + user.username + '&password=' + user.password;
+          var params = '?username=' + user.username + '&password=' + user.password;
           $http.get('https://api.parse.com/1/login/' + params, PARSE_HEADERS)
             .success(function (data) {
+              $location.path('/');
               $cookieStore.put('currentUser', data);
               return myUser();
             });
@@ -92,8 +90,7 @@
         return {
           login: login,
           logout: logout,
-          signUp: signUp,
-
+          signUp: signUp
 
         }
       }

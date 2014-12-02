@@ -24,10 +24,10 @@
 
 
 
-      //$routeProvider.when('/addRecipe', {
-      //  templateUrl: 'scripts/recipe/add_recipe.html'
-      //  //controller: ''
-      //});
+      $routeProvider.when('/addRecipe', {
+        templateUrl: 'scripts/recipe/add_recipe.html'
+        //controller: ''
+      });
 
 
 
