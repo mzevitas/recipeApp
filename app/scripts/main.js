@@ -25,8 +25,13 @@
 
 
       $routeProvider.when('/addRecipe', {
-        templateUrl: 'scripts/recipe/add_recipe.html'
-        //controller: ''
+        templateUrl: 'scripts/recipe/add_recipe.html',
+        controller: 'addRecipe'
+      });
+
+      $routeProvider.when('/', {
+        templateUrl: 'scripts/recipe/home.html',
+        controller: 'addRecipe'
       });
 
 

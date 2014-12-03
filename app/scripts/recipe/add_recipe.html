@@ -1,21 +1,38 @@
-<form ng-submit="addRecipe(recipe)">
+<form ng-submit="addRecipe(r)">
   <h3>Recipe Title</h3>
-  <input type="text" ng-model="recipe.title" placeholder="Your Recipe Title"/>
+  <input type="text" ng-model="r.title" placeholder="Your Recipe Title"/>
 
   <h3>Record Your Video</h3>
 
 
+  <!---->
+  <!---->
+  <!--<h3>Backing nstructions</h3>-->
+  <!--<textarea ng-model="recipe"></textarea>-->
   <h3>Enter Ingredients </h3>
-  <input type="text" ng-model="recipe.ingredients" placeholder="Enter An Ingredient" />
+  <textarea ng-model="r.ingredients" placeholder="Enter An Ingredient"></textarea>
 
 
   <h3>Step By Step Directions</h3>
-  <input type="text" ng-model="recipe.directions" placeholder="Add Steps" />
+  <textarea ng-model="r.directions" placeholder="Add Steps"></textarea>
+
+
+
+  <h3>Choose Category</h3>
+  <select  id="postTag" placeholder="Select Meal">
+    <option value="breakfast" >Breakfast</option>
+    <option value="lunch" >Lunch</option>
+    <option value="dinner" >Dinner</option>
+    <option value="dessert" >Dessert</option>
+    <option value="drinks" >Drinks</option>
+
+
+  </select>
 
 
 
   <h3>Upload Photos</h3>
-  <input type="file" ng-model="recipe.photo" name="pic" accept="image/*">
+  <input type="file" ng-model="r.photo" name="pic" accept="image/*">
 
 
 <br/>
