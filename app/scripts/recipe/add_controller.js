@@ -1,16 +1,16 @@
 (function (){
 
   angular.module('Recipe')
-    .controller('RecipeFactory', ['$scope', 'RecipeFactory',
+    .controller('addRecipe', ['$scope', 'RecipeFactory',
     function ($scope, RecipeFactory){
 
-    RecipeFactory.getIngred().success( function(data){
+      RecipeFactory.getRecipe().success( function(data){
       $scope.recipe= data.results;
 
     });
 
-      $scope.addIngred = function (recipe) {
-        RecipeFactory.addIngred(recipe);
+      $scope.addRecipe = function (recipe) {
+        RecipeFactory.addRecipe(recipe);
       };
 
 

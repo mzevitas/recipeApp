@@ -5,28 +5,27 @@
       function ($http, $location, $cookieStore, PARSE_HEADERS) {
 
 
-        var url = 'https://api.parse.com/1/classes/Recipe/';
+        //var url = 'https://api.parse.com/1/classes/Recipe/';
 
-        var getIngred = function () {
-          return $http.get(url, PARSE_HEADERS);
+        var getRecipe = function () {
+          var steps= recipe.title + recipe.ingredients + recipe.directions + recipe.photo;
+          return $http.get('https://api.parse.com/1/classes/Recipe/' + steps, PARSE_HEADERS);
         };
 
-        var addIngred = function (ingred) {
-          $http.post(url, ingred, PARSE_HEADERS)
+        var addRecipe = function (recipe) {
+          $http.post('https://api.parse.com/1/classes/Recipe/', recipe, PARSE_HEADERS)
             .success( function () {
+
               $location.path('/');
             }
           );
         };
 
-        var deleteIngred = function (wID) {
-          return $http.delete(url + wID, PARSE_HEADERS);
-        };
+
 
         return {
-          getIngred: getIngred,
-          addIngred: addIngred,
-          deleteIngred: deleteIngred
+          getRecipe: getRecipe,
+          addRecipe: addRecipe
         }
 
       }

@@ -1,7 +1,11 @@
 <div class="homePage">
 
-  {{ recipe.photo }}
-  {{ recipe.title }}
+  <ul>
+    <li ng-repeat="recipe in recipe" id="{{ recipe.objectId }}">
 
+      {{ recipe.photo }}
+      {{ recipe.title }}
+    </li>
+  </ul>
 
 </div>
