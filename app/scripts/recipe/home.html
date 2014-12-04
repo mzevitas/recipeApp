@@ -1,9 +1,12 @@
 
   <ul>
-    <li ng-repeat="recipe in recipe" id="{{ recipe.objectId }}">
-
-      {{ recipe.photo }}
-      {{ recipe.title }}
+    <li ng-repeat="r in recipe" id="{{ r.objectId }}">
+      <a href="#/single-page.html/objectId"></a>
+      {{ r.photo }} <br/>
+      {{ r.title }}<br/>
+      {{ r.ingredients }}<br/>
+      {{ r.directions }}<br/>
+      {{ r.category }}
     </li>
   </ul>
 
