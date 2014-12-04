@@ -34,6 +34,11 @@
         controller: 'addRecipe'
       });
 
+      $routeProvider.when('/viewrecipe', {
+        templateUrl: 'scripts/recipe/single-page.html',
+        controller: 'addRecipe'
+      });
+
 
 
     });
