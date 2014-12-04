@@ -17,20 +17,39 @@
             .success(function (data) {
               $location.path('/');
               $cookieStore.put('currentUser', data);
-              return myUser();
+              return checkUser();
             });
         };
 
         var logout = function () {
           $cookieStore.remove('currentUser');
-          return myUser();
+          return checkUser();
         };
+
+
+        var checkUser = function (user) {
+          var user = $cookieStore.get('currentUser');
+          if(user) {
+            $('#user').html('Welcome back ' + user.username);
+            $('.loginbtn').hide();
+            $('.signupbtn').hide();
+            $location.path('/profile');
+          } else {
+            $('#user').html('Please Log In');
+            $location.path('/login');
+          }
+        };
+
+        var currentUser = function () {
+          return $cookieStore.get('currentUser');
+        }
 
 
         return {
           login: login,
           logout: logout,
-          signUp: signUp
+          signUp: signUp,
+          checkUser: checkUser
 
         }
       }

@@ -5,10 +5,21 @@
   <h3>Record Your Video</h3>
 
 
-  <!---->
-  <!---->
-  <!--<h3>Backing nstructions</h3>-->
-  <!--<textarea ng-model="recipe"></textarea>-->
+  <!--<device type="media" onchange="update(this.data)"></device>-->
+  <!--<video autoplay></video>-->
+
+
+  <div style="text-align:center;">
+    <video id="basic-stream" class="videostream" autoplay></video>
+    <p><button id="capture-button">Capture video</button> <button id="stop-button">Stop</button></p>
+  </div>
+
+
+
+
+
+
+
   <h3>Enter Ingredients </h3>
   <textarea ng-model="r.ingredients" placeholder="Enter An Ingredient"></textarea>
 
@@ -32,12 +43,11 @@
 
 
   <h3>Upload Photos</h3>
-  <input type="file" ng-model="r.photo" name="pic" accept="image/*">
-  <input type="submit" name="submit"/>
+  <input type="file" ng-model="r.photo" name="pic">
 
 
 <br/>
-  <button>Submit Recipe</button>
+  <button>Publish Recipe</button> <button>Save to Profile</button>
 
 
 

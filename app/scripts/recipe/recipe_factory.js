@@ -17,8 +17,9 @@
               $location.path('/');
             }
           );
-          console.log(recipe);
         };
+
+
 
 
 
