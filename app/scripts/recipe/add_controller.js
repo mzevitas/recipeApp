@@ -15,7 +15,7 @@
 
 
 
-        //
+
         //
         //
         //
@@ -125,8 +125,8 @@
         //} else {
         //  navigator.getUserMedia({video: true}, success, fallback);
         //}
-        //
-        //
+
+
 
       };
 
