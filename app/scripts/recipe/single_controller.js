@@ -10,9 +10,9 @@
 
 
 
-        RecipeFactory.findCategory($routeParams.category).success( function(sortData){
-          $scope.r= sortData;
-        });
+        //RecipeFactory.findCategory($routeParams.category).success( function(sortData){
+        //  $scope.r= sortData;
+        //});
 
 
 

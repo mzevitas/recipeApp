@@ -1,8 +1,19 @@
-<div class="breakfast" ng-controller="singlePage" ng-options="{{r.category == 'breakfast'}}">
+<!--<div class="breakfast" ng-controller="singlePage">-->
 
 
-  {{ r.title }}<br/>
-  {{ r.ingredients }}<br/>
-  {{ r.directions }}<br/>
-  {{ r.category }}
+  <!--{{ r.title }}<br/>-->
+  <!--{{ r.ingredients }}<br/>-->
+  <!--{{ r.directions }}<br/>-->
+  <!--{{ r.category }}-->
+<!--</div>-->
+
+<div ng-controller="Recipe as ctrl">
+  <div>
+    All entries:
+    <span ng-repeat="entry in ctrl.array">{{entry.name}} </span>
+  </div>
+  <div>
+    Entries that contain an "a":
+    <span ng-repeat="entry in ctrl.filteredArray">{{entry.name}} </span>
+  </div>
 </div>
