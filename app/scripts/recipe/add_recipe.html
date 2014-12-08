@@ -5,17 +5,7 @@
   <h3>Record Your Video</h3>
 
 
-  <!--<device type="media" onchange="update(this.data)"></device>-->
-  <!--<video autoplay></video>-->
-
-
-  <div style="text-align:center;">
-    <video id="basic-stream" class="videostream" autoplay></video>
-    <p><button id="capture-button">Capture video</button> <button id="stop-button">Stop</button></p>
-  </div>
-
-
-
+  <button id="openFilePicker">Choose Image</button>
 
 
 
@@ -43,7 +33,8 @@
 
 
   <h3>Upload Photos</h3>
-  <input type="file" ng-model="r.photo" name="pic">
+  <input type="file" name="pic" accept="image/*">
+  <input type="submit">
 
 
 <br/>

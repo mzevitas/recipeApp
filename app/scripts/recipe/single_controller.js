@@ -1,18 +1,18 @@
 (function (){
 
   angular.module('Recipe')
-    .controller('singlePage', ['$scope', 'RecipeFactory',
-      function ($scope, RecipeFactory) {
+    .controller('singlePage', ['$scope', 'RecipeFactory', '$routeParams',
+      function ($scope, RecipeFactory, $routeParams) {
 
-        RecipeFactory.getRecipe().success(function (data) {
-            $scope.recipe = data.results;
-
-
-
-          })
+        RecipeFactory.getSingle($routeParams.rid).success( function(data){
+          $scope.r= data;
+        });
 
 
-      }]);
+          }
+
+
+      ])
 
 
 }());

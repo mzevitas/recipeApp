@@ -34,12 +34,20 @@
         controller: 'addRecipe'
       });
 
-      $routeProvider.when('/viewrecipe', {
+      $routeProvider.when('/viewrecipe/:rid', {
         templateUrl: 'scripts/recipe/single-page.html',
+        controller: 'singlePage'
+      });
+
+      $routeProvider.when('/breakfast', {
+        templateUrl: 'scripts/recipe/breakfast.html',
         controller: 'addRecipe'
       });
 
-
+      $routeProvider.when('/profile', {
+        templateUrl: 'scripts/recipe/profile.html',
+        controller: 'addRecipe'
+      });
 
     });
 
