@@ -39,7 +39,7 @@
         controller: 'singlePage'
       });
 
-      $routeProvider.when('/breakfast', {
+      $routeProvider.when('/breakfast/:category', {
         templateUrl: 'scripts/recipe/breakfast.html',
         controller: 'addRecipe'
       });
