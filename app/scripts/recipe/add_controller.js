@@ -16,24 +16,31 @@
 
 
 
-      $scope.openFilePicker = function () {
 
-       filepicker.setKey("AcTWNDhu6RM25T2p8o86gz");
+      filepicker.setKey("AcTWNDhu6RM25T2p8o86gz");
 
-       filepicker.pick(
-         {
-           mimetypes: ['image/*', 'text/plain'],
-           container: 'window',
-           services: ['COMPUTER', 'FACEBOOK', 'GMAIL'],
-         },
-         function (Blob) {
-           console.log(JSON.stringify(Blob));
-         },
-         function (FPError) {
-           console.log(FPError.toString());
-         }
-       );
-     };
+      $("#somebutton").on("click", function (e) {
+        e.preventDefault();
+
+      filepicker.pick(
+        {
+          mimetypes: ['image/*', 'video/*', 'text/plain'],
+          container: 'window',
+          services: ['COMPUTER', 'VIDEO']
+        },
+        function (Blob) {
+          RecipeFactory.addRecipe(Blob)
+          console.log(Blob);
+          console.log(JSON.stringify(Blob));
+        },
+        function (FPError) {
+          console.log(FPError.toString());
+
+        }
+      );
+        });
+
+
 
 
     }]);
