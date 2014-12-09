@@ -9,8 +9,6 @@
 
         });
 
-        $scope.imageFile.getUrl();
-
       //RecipeFactory.imageFile.getUrl();
 
           }
