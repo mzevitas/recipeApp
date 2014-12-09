@@ -1,19 +1,16 @@
 //(function (){
 //
+//  angular.module('Recipe')
+//    .controller('Filter', ['$scope', 'RecipeFactory','$routeParams',
+//      function ($scope, RecipeFactory, $routeParams){
 //
 //
-//angular.module('Recipe', []).
-//  controller('FilterController', ['filterFilter', function(filterFilter) {
-//    this.array = [
-//      {name: 'Tobias'},
-//      {name: 'Jeff'},
-//      {name: 'Brian'},
-//      {name: 'Igor'},
-//      {name: 'James'},
-//      {name: 'Brad'}
-//    ];
-//    this.filteredArray = filterFilter(this.array, 'a');
-//  }]);
 //
 //
+//
+//
+//        )};
 //}());
+//
+//
+//

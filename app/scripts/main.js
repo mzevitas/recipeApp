@@ -8,7 +8,6 @@
         'Content-Type': 'application/json'
       }
     })
-    //.constant('https://api.parse.com/1/')
     .config( function ($routeProvider) {
 
 
@@ -39,7 +38,7 @@
         controller: 'singlePage'
       });
 
-      $routeProvider.when('/breakfast/:category', {
+      $routeProvider.when('/breakfast', {
         templateUrl: 'scripts/recipe/breakfast.html',
         controller: 'addRecipe'
       });

@@ -26,9 +26,9 @@
         };
 
 
-        var findCategory = function (category) {
-          return $http.get('https://api.parse.com/1/classes/Recipe/' + category, PARSE_HEADERS);
-        };
+        //var findCategory = function (category) {
+        //  return $http.get('https://api.parse.com/1/classes/Recipe/' + category, PARSE_HEADERS);
+        //};
 
 
 

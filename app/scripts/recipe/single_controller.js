@@ -6,15 +6,12 @@
 
         RecipeFactory.getSingle($routeParams.rid).success( function(data){
           $scope.r= data;
+
         });
 
+        $scope.imageFile.getUrl();
 
-
-        //RecipeFactory.findCategory($routeParams.category).success( function(sortData){
-        //  $scope.r= sortData;
-        //});
-
-
+      //RecipeFactory.imageFile.getUrl();
 
           }
       ]);
