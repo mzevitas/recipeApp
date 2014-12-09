@@ -48,6 +48,27 @@
         controller: 'addRecipe'
       });
 
+      $routeProvider.when('/lunch', {
+        templateUrl: 'scripts/recipe/lunch.html',
+        controller: 'addRecipe'
+      });
+      $routeProvider.when('/dinner', {
+        templateUrl: 'scripts/recipe/dinner.html',
+        controller: 'addRecipe'
+      });
+      $routeProvider.when('/dessert', {
+        templateUrl: 'scripts/recipe/dessert.html',
+        controller: 'addRecipe'
+      });
+      $routeProvider.when('/apps', {
+        templateUrl: 'scripts/recipe/apps.html',
+        controller: 'addRecipe'
+      });
+      $routeProvider.when('/drinks', {
+        templateUrl: 'scripts/recipe/drinks.html',
+        controller: 'addRecipe'
+      });
+
     });
 
 
