@@ -8,7 +8,7 @@
    font-family: 'News Cycle', sans-serif;
    width: 100%;
    background-color: hsla(25,19%,93%,1);
-   padding: 8px;
+   padding: 7px;
  }
 
  .container {
@@ -29,6 +29,14 @@
      filter: invert(97%);
 
     }
+
+   #user {
+     color: white;
+     font-size: 20px;
+     float: right;
+     margin-top: 23px;
+     margin-right: 79px;
+   }
 
   a {
 
