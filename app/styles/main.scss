@@ -151,10 +151,82 @@
  .homePage{
    @include outer-container;
 
-   li.block {
-     @include span-columns(3);
-     @include omega(4n);
+
+   .meal{
+//     margin-left: 100px;
+   }
+
+   .recipe1 {
+     @include span-columns(4);
+     height: 100px;
+     a {
+       text-decoration: none;
+       color: black;
+     }
+
+
+   }
+   .recipe2 {
+     @include span-columns(4);
+   }
+   .recipe3 {
+     @include span-columns(4);
    }
 
  }
+
+ .topProfile {
+   padding: 10px;
+
+   img {
+     width: 250px;
+     float: left;
+     border: solid;
+   }
+
+
+ }
+
+ .addform {
+   @include outer-container;
+
+
+
+   .addingd {
+     @include span-columns(6);
+      float: left;
+     display: block;
+   }
+   textarea {
+     width: 400px;
+     height: 250px;
+
+   }
+
+   .stepX{
+     @include span-columns(6);
+     clear: both;
+     float: right;
+     display: block;
+     margin-top: -320px;
+
+
+   }
+   textarea {
+     width: 400px;
+     height: 250px;
+
+   }
+
+   .record {
+     clear: both;
+   }
+
+   button{
+     margin-bottom: 15px;
+     border-radius: 10px;
+   }
+ }
+
+
 

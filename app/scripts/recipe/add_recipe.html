@@ -1,23 +1,31 @@
-<form ng-submit="addRecipe(r)">
+<form class="addform" ng-submit="addRecipe(r)">
   <h3>Recipe Title</h3>
   <input type="text" ng-model="r.title" placeholder="Your Recipe Title"/>
 
 
+  <br>
+
+
+<div class="addingd">
+  <h3>Enter Ingredients </h3>
+  <textarea ng-model="r.ingredients" placeholder="Enter An Ingredient"></textarea>
+</div>
+
+<div class="stepX">
+  <h3>Step By Step Directions</h3>
+  <textarea ng-model="r.directions" placeholder="Add Steps"></textarea>
+  </div>
+
+
+
+  <br />
+
+  <div class="record">
   <h3>Record Your Video</h3>
 
 
 
   <button ng-model="r.image" id="somebutton">Record Video</button>
-
-
-
-  <h3>Enter Ingredients </h3>
-  <textarea ng-model="r.ingredients" placeholder="Enter An Ingredient"></textarea>
-
-
-  <h3>Step By Step Directions</h3>
-  <textarea ng-model="r.directions" placeholder="Add Steps"></textarea>
-
 
 
   <h3>Choose Category</h3>
@@ -30,13 +38,15 @@
 
 
   </select>
+    <br />
 
-
+  </div>
 
   <h3>Upload Photos</h3>
   <input ng-model="r.image" type="file" name="pic" accept="image/*">
   <input type="submit">
 
+  <hr>
 
 <br/>
   <button>Publish Recipe</button> <button>Save to Profile</button>
