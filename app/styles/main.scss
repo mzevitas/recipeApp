@@ -179,9 +179,10 @@
    padding: 10px;
 
    img {
-     width: 250px;
+     width: 200px;
      float: left;
      border: solid;
+
    }
 
 
@@ -225,6 +226,31 @@
    button{
      margin-bottom: 15px;
      border-radius: 10px;
+   }
+ }
+
+ .proRecipe {
+   @include outer-container;
+   clear: both;
+
+
+   .proRecipe1 {
+     @include span-columns(4);
+     a {
+       text-decoration: none;
+       color: black;
+     }
+   }
+
+   .proRecipe2 {
+     @include span-columns(4);
+
+
+   }
+   .proRecipe3 {
+     @include span-columns(4);
+
+
    }
  }
 
